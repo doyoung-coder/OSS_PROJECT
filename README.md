@@ -110,7 +110,7 @@ npm install
 
 Bash
 npm start
-실행이 완료되면 브라우저를 통해 http://localhost:3000으로 접속하여 메인 화면을 이용할 수 있다.
+실행이 완료되면 브라우저를 통해 http://localhost:3000 으로 접속하여 메인 화면을 이용할 수 있다.
 
 3. 실제 서버 배포처럼 작동시켜보기 (ngrok 터널링)
    
@@ -128,7 +128,7 @@ ngrok authtoken <인증받은_토큰>
 
 Bash
 ngrok http 8080
-실행 화면의 Forwarding 항목에 있는 URL (예: https://eleven-acquaint-strongly.ngrok-free.dev)을 복사한다. 다른 사람들이 이 주소로 접근하면 로컬 백엔드 API 서버에 연결.
+실행 화면의 Forwarding 항목에 있는 URL (예: https://eleven-acquaint-strongly.ngrok-free.dev) 을 복사한다. 다른 사람들이 이 주소로 접근하면 로컬 백엔드 API 서버에 연결.
 
 [주의사항] 
 
@@ -139,11 +139,11 @@ ngrok은 재실행할 때마다 도메인 주소가 새로 바뀌므로, 변경 
 
 프론트엔드에서 백엔드로 로그인 요청을 보내기 전, 브라우저에서 ngrok 보안 경고를 해제해야 합니다.
 
-브라우저 새 탭을 열고 터미널에서 복사한 백엔드 ngrok 주소(https://....ngrok-free.dev)로 직접 접속합니다.
+브라우저 새 탭을 열고 터미널에서 복사한 백엔드 ngrok 주소(https://....ngrok-free.dev) 로 직접 접속합니다.
 
 화면에 파란색 ngrok 경고 창이 나타나면 화면 중앙의 [Visit Site] 버튼을 클릭합니다. (에러 페이지가 뜨면 성공입니다.)
 
-다시 리액트 화면(http://localhost:3000)으로 돌아와서 로그인을 진행하면 정상적으로 통신이 이루어집니다.
+다시 리액트 화면(http://localhost:3000) 으로 돌아와서 로그인을 진행하면 정상적으로 통신이 이루어집니다.
 
 4. 간단한 사이트 이용 방법
    
