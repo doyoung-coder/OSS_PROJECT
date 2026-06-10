@@ -40,39 +40,31 @@ build.gradle 파일을 열고 아래와 같이 핵심 플러그인과 의존성�
 Gradle
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.4.5'
-    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.springframework.boot' version '3.2.5' 
+    id 'io.spring.dependency-management' version '1.1.6'
 }
 
-group = 'com.deeplocal'
+group = 'com.yeungnam'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    toolchain { languageVersion = JavaLanguageVersion.of(21) }
-}
-
-configurations {
-    compileOnly { extendsFrom annotationProcessor }
+    sourceCompatibility = '21' 
 }
 
 repositories {
-    mainCentral()
+    mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.mysql:mysql-connector-j'
     runtimeOnly 'com.h2database:h2'
-    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
-    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
-    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
 }
 
 tasks.named('test') {
@@ -142,6 +134,16 @@ ngrok http 8080
 
 ngrok은 재실행할 때마다 도메인 주소가 새로 바뀌므로, 변경 시 프론트엔드 소스 코드 내 API 통신 주소를 일괄 수정해야 한다. 
 또한 백엔드 애플리케이션이 실행 중인 상태여야 터널링 접속이 유지된다.
+
+[필수: API 통신 전 ngrok 경고 화면 우회] 
+
+프론트엔드에서 백엔드로 로그인 요청을 보내기 전, 브라우저에서 ngrok 보안 경고를 해제해야 합니다.
+
+브라우저 새 탭을 열고 터미널에서 복사한 백엔드 ngrok 주소(https://....ngrok-free.dev)로 직접 접속합니다.
+
+화면에 파란색 ngrok 경고 창이 나타나면 화면 중앙의 [Visit Site] 버튼을 클릭합니다. (에러 페이지가 뜨면 성공입니다.)
+
+다시 리액트 화면(http://localhost:3000)으로 돌아와서 로그인을 진행하면 정상적으로 통신이 이루어집니다.
 
 4. 간단한 사이트 이용 방법
    
