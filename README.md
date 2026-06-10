@@ -1,4 +1,5 @@
 1. 실행 환경
+   
 Java 설치
 Java Development Kit (JDK) 21이 설치되어 있어야 한다.
 
@@ -25,9 +26,11 @@ ngrok 계정 및 ngrok CLI
 Git, IDE (IntelliJ IDEA, VS Code 등)
 
 2. 프로젝트 실행 방법
+   
 소스코드 .zip 파일을 다운받은 후에 파일 탐색기나 명령어를 통해 압축을 해제한다.
 
 2-1. 백엔드 (Spring Boot) 실행 방법
+
 프로젝트의 application.yml 파일이 빌드된 JAR 파일과 같은 디렉토리에 위치해야 정상 작동한다.
 
 인텔리제이(IntelliJ)에서 백엔드 프로젝트 폴더를 연다.
@@ -75,6 +78,7 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
 터미널(cmd)을 열고 백엔드 프로젝트 루트 디렉토리로 이동한다
 
 .\gradlew clean build 명령어를 입력해 JAR 파일을 생성한다.
@@ -102,6 +106,7 @@ PowerShell
 .\gradlew bootRun
 
 2-2. 프론트엔드 (React) 실행 방법
+
 Powershell 또는 터미널을 열고 프론트엔드 프로젝트 디렉토리(deep-local-web)로 이동한다.
 
 프로젝트 구동에 필요한 라이브러리 패키지를 다운로드한다. 
@@ -116,6 +121,7 @@ npm start
 실행이 완료되면 브라우저를 통해 http://localhost:3000으로 접속하여 메인 화면을 이용할 수 있다.
 
 3. 실제 서버 배포처럼 작동시켜보기 (ngrok 터널링)
+   
 다른 사용자가 외부 URL을 통해 접속할 수 있도록 하거나, 프론트엔드와 백엔드 간의 원활한 HTTPS 보안 통신을 연동하기 위해 ngrok 터널링을 허용해 줄 수 있다.
 
 ngrok 계정을 생성하고 PowerShell을 관리자 권한으로 열어 아래 명령어를 입력한다.
@@ -133,10 +139,12 @@ ngrok http 8080
 실행 화면의 Forwarding 항목에 있는 URL (예: https://eleven-acquaint-strongly.ngrok-free.dev)을 복사한다. 다른 사람들이 이 주소로 접근하면 로컬 백엔드 API 서버에 연결.
 
 [주의사항] 
+
 ngrok은 재실행할 때마다 도메인 주소가 새로 바뀌므로, 변경 시 프론트엔드 소스 코드 내 API 통신 주소를 일괄 수정해야 한다. 
 또한 백엔드 애플리케이션이 실행 중인 상태여야 터널링 접속이 유지된다.
 
 4. 간단한 사이트 이용 방법
+   
 사이트에 처음 접속하게 되면 회원가입을 진행하고 로그인을 완료해야 메인 페이지로 진입이 가능합니다.
 로그인 계정은 권한에 따라 일반 사용자와 관리자 두 가지 유형으로 분류됩니다.
 
