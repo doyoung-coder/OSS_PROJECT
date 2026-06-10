@@ -79,7 +79,7 @@ tasks.named('test') {
 
 터미널에서 JAR 파일이 있는 디렉토리로 이동한 후, java -jar deeplocal-0.0.1-SNAPSHOT.jar 명령어를 입력해 애플리케이션을 시작한다.
 
-브라우저를 열고 http://localhost:8080으로 접속하여 서버 상태를 확인한다.
+브라우저를 열고 http://localhost:8080 으로 접속하여 서버 상태를 확인한다.
 
 
 JAR 파일이 실행되지 않을 때 조치 방법:
